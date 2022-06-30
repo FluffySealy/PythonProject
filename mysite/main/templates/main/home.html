@@ -1,0 +1,18 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+<h1>Welcome</h1>
+<hr>
+{% if user.is_authenticated %}
+    <p>Welcome back, {{ user.get_username }}. Thanks for logging in. Click here to <a href="/logout">logout</a>.</p>
+{% else %}
+    <p>Welcome, Please <a href="/login">log in</a> or <a href="/register">register</a> an Account.</p>
+{% endif %}
+<br>
+<hr>
+    <p>If you are a Company administrator, please use <a href="/admin">/admin</a> to login.</p>
+{% endblock %}
