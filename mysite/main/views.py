@@ -10,7 +10,7 @@ def index(response, id):
     ls = ToDoList.objects.get(id=id)
 
     if ls in response.user.todolist.all():
-
+        #Checks for POST requests
         if response.method == 'POST':
             if response.POST.get('save'):
                 for item in ls.item_set.all():
